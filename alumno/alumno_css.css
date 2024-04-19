@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: OpenSans;
+    color: #303030;
+    font-size: .95rem;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header {
+    width: 100%;
+    background-color: #FF8300;
+    color: white;
+    display: flex;
+    padding: 0%;
+    justify-content: space-between;
+}
+
+.header h1 {
+    padding-left: 100px;
+}
+
+.bienvenido {
+    z-index: 2;
+    width: 500px;
+    float: right;
+    display: block;
+    background-color: #303030;
+    transform: skew(-40deg);
+    text-align: center;
+}
+
+.bienvenido h2{
+    display: inline-block;
+    transform: skew(40deg);
+}
+
+.boton-modal {
+    background-color: #ff8500;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 10px 10px;
+    font-weight: 500;
+    min-height: 112px;
+}
+
+.modal-container {
+    display: flex;
+    position: fixed;
+    background-color: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    pointer-events: 0;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.show {
+    display: flex;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: white;
+    width: 600x;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.modal h1 {
+    margin: 0;
+}
+
