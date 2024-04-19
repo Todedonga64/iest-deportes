@@ -72,5 +72,5 @@ $db=mysqli_connect("localhost","root","","iest_deportes");
             </div>
 
 <nav>
-    <a href="admin_index.php">Cerrar sesión</a>
+    <a href="admin_index.php">Regresar</a>
 </nav>

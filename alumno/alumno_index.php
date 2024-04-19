@@ -39,7 +39,6 @@ mysqli_close($db);
 	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Patua+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Secular+One&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="admin.js"></script>
 </head>
 
 <body>
@@ -83,6 +82,8 @@ mysqli_close($db);
 <nav>
     <a href="logout.php">Cerrar sesión</a>
 </nav>
+
+<script src="alumnojs.js"></script>
 
 </body>
 </html>
