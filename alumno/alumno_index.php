@@ -74,8 +74,9 @@ mysqli_close($db);
                 <option value="actividad">Actividad deportiva</option>
                 <option value="cuadro">Cuadro de honor</option>
             </select>
-            <input type="submit" class="fadeIn fourth" id="close" name="solicitud-btn" value="Envíar">
+            <input type="submit" class="fadeIn fourth" name="solicitud-btn" value="Envíar">
         </form>
+        <button id="close">Cerrar</button>
     </div>
 </div>
 
