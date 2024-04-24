@@ -17,12 +17,18 @@ if (isset($_POST['solicitud-btn'])) {
     $sql = "INSERT INTO solicitudes VALUES ('$id','$deporte', '$motivo','pendiente')";
 
     // Ejecutar la consulta
-    if (mysqli_query($db, $sql)) {
-        $_SESSION['alert']="Solicitud ingresada correctamente";
-    } else {
-        $_SESSION['alert']="Error al ingresar la solicitud";
+    try {
+        if (mysqli_query($db, $sql)) {
+            echo '<script>alert("Solicitud ingresada correctamente");</script>';
+        } else {
+            $_SESSION['alert']="Error al ingresar la solicitud";
+        }
+    } catch (mysqli_sql_exception $e) {
+        // Si hay un error de duplicación de clave primaria, mostrar un mensaje de error
+        echo '<script>alert("Solo puedes tener una solicitud activa");</script>';
     }
 }
+
 
 // Cerrar la conexión
 mysqli_close($db);
