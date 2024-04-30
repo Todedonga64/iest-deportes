@@ -1,5 +1,15 @@
 <?php
-session_start();
+session_start(); // Iniciar la sesión si no se ha iniciado aún
+
+// Verificar si el usuario está autenticado
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    // Obtener el nombre del usuario de la sesión
+    $nombre = $_SESSION['user_data']['nombre']; // Ajusta según la estructura de tu array de datos de usuario
+} else {
+    // Si el usuario no está autenticado, redirigir al formulario de inicio de sesión
+    header("Location: index.php"); // Ajusta el nombre del archivo de inicio de sesión si es necesario
+    exit; // Asegurar que el script se detenga después de la redirección
+}
 $db=mysqli_connect("localhost","root","","mydb");
 ?>
 
@@ -22,7 +32,7 @@ $db=mysqli_connect("localhost","root","","mydb");
 <header class="header">
     <h1>IEST DEPORTES</h1>
     <div class="bienvenido">
-        <h2>Bienvenid@ <?php echo $_SESSION['usuario']?></h2>
+        <h2>Bienvenid@ <?php echo $_SESSION['nombre']?></h2>
     </div>
 </header>
 
@@ -32,10 +42,10 @@ $db=mysqli_connect("localhost","root","","mydb");
 
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Numero Solicitud</th>
                                 <th>Deporte</th>
-                                <th>Motivo</th>
-                                <th>Status</th>
+                                <th>Descripcion</th>  <!-- FALTA AGREGAR NOMBRES DE USUARIO Y ID DEL USUARIO --> 
+                                <th>Status</th>       <!-- TMB EN LUGAR DE SACAR EL ID DEL DEPORTE QUE SAQUE EL NOMBRE -->
                             </tr>
                         </thead>
                         <tbody>
@@ -48,16 +58,16 @@ $db=mysqli_connect("localhost","root","","mydb");
                                 <!--recorro mi tabla usuario-->
                                 <tr>
                                     <td>
-                                        <?php echo $row['id']; ?>
+                                        <?php echo $row['idSolicitudes']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['deporte']; ?>
+                                        <?php echo $row['iddeporte']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['motivo']; ?>
+                                        <?php echo $row['motivo_solicitud']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['stat']; ?>
+                                        <?php echo $row['estatus']; ?>
                                     </td>
                                 </tr>
                                 
