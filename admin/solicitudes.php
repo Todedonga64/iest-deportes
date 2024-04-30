@@ -1,6 +1,6 @@
 <?php
 session_start();
-$db=mysqli_connect("localhost","root","","iest_deportes");
+$db=mysqli_connect("localhost","root","","mydb");
 ?>
 
 <!DOCTYPE html>
