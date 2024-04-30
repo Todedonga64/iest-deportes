@@ -97,10 +97,14 @@ html {
 }
 
 .col-md-3 {
-    position: relative;
-    width: 25%;
-    padding-right: 15px;
-    padding-left: 15px;
+    flex-basis: 50%; /* Esto hará que cada opción ocupe la mitad del contenedor */
+    box-sizing: border-box; /* Esto asegura que el ancho incluya el relleno y el borde */
+    padding: 10px;
+    transition: all 200ms ease-in;
+}
+
+.col-md-3:hover{
+    transform: scale(1.03);
 }
 
 *, ::after, ::before {
@@ -226,8 +230,8 @@ div {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    /*margin-right: -15px;
+    margin-left: -15px;*/
 }
 
 .sidebar {
@@ -294,3 +298,5 @@ div {
     display: block;
     opacity: 1;
   }
+
+  
