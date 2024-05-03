@@ -79,7 +79,7 @@ function validar_jerarquia(){
     session_start();
     switch($_SESSION['tipo_usuario']){
         case 1:
-            header("Location: /direccion de la jerarquia1");
+            header("Location:alumno/alumno_index.php");
             break;
         case 2:
             header("Location: /direccion de la jerarquia1");

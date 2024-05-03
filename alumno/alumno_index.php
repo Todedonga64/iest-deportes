@@ -1,9 +1,14 @@
 <?php
-session_start();
-$db=mysqli_connect("localhost","root","","iest_deportes");
+session_start(); // Iniciar la sesión si no se ha iniciado aún
 
-if (!$db) {
-    die("Error de conexión: " . mysqli_connect_error());
+// Verificar si el usuario está autenticado
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    // Obtener el nombre del usuario de la sesión
+    $nombre = $_SESSION['user_data']['nombre']; // Ajusta según la estructura de tu array de datos de usuario
+} else {
+    // Si el usuario no está autenticado, redirigir al formulario de inicio de sesión
+    header("Location: index.php"); // Ajusta el nombre del archivo de inicio de sesión si es necesario
+    exit; // Asegurar que el script se detenga después de la redirección
 }
 
 // Verificar si se ha enviado el formulario
@@ -52,7 +57,7 @@ mysqli_close($db);
 <header class="header">
     <h1>IEST DEPORTES</h1>
     <div class="bienvenido">
-        <h2>Bienvenid@ <?php echo $_SESSION['usuario']?></h2>
+        <h2>Bienvenid@ <?php echo $_SESSION['nombre']?></h2>
     </div>
 </header>
 
