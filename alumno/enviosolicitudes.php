@@ -59,6 +59,8 @@ if (isset($_POST['solicitud-btn'])) {
 </header>
 
         
+<!-- NO FUNCIONA EL ENVIO DE FORM, LO VOY ARREGLAR MAS TARDE BY: MAX -->
+
 <div class="container_formulario">
         <h1>Nueva Solicitud</h1>
     <form action="enviosolicitudes.php" class="form-contact" method="post" tabindex="1">
@@ -80,7 +82,7 @@ if (isset($_POST['solicitud-btn'])) {
             <option value="cuadro">Selección deportiva</option>
         </select>
 
-        <textarea class="form-contact-textarea" name="conteudo" placeholder="Deja un mensaje" required></textarea>
+        <textarea class="form-contact-textarea" name="conteudo" placeholder="Motivo de Tu Solicitud" required></textarea>
         <button type="submit" class="form-contact-button">Enviar</button>
     </form>
 </div>
