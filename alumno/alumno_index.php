@@ -17,13 +17,13 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 <head>
     <meta charset="utf-8">
     <title>Administrador</title>
-    <link href="admin_css.css" rel="stylesheet" type="text/css">
+    <link href="alumno_css.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Patua+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth&family=Secular+One&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="admin.js"></script>
+    <script src="alumnojs.js"></script>
 </head>
 
 <body>
