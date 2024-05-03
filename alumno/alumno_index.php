@@ -16,7 +16,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Administrador</title>
+    <title>Alumno</title>
     <link href="alumno_css.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,12 +41,17 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         </ul>
     </div>
 
+<div> <!-- METER CSS A ESTE DIV -->
+    <h1>INICIO</h1>
+</div>
+
+
 <div class="row mis-clases-cards">
 
     <div class="col-md-3 cursor-pointer academico">
         <a class="a-no-format cursor-pointer" id="23395"><div class="card subjects-home">
             <div class="card-body hvr-shutter-out-vertical ">
-                <label class="card-title cursor-pointer">Deportes</label>
+                <label class="card-title cursor-pointer">Mi Perfil</label>
             </div>
             <div class="card-footer subjects-footer cursor-pointer"></div>
             </div>
@@ -56,7 +61,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <div class="col-md-3 cursor-pointer academico">
         <a class="a-no-format cursor-pointer" id="23395"><div class="card subjects-home">
             <div class="card-body hvr-shutter-out-vertical ">
-                <label  onclick="location.href='enviosolicitudes.php'" class="card-title cursor-pointer">Enviar Solicitud</label>
+                <label  onclick="location.href='enviosolicitudes.php'" class="card-title cursor-pointer">Crear Solicitud</label>
             </div>
             <div class="card-footer subjects-footer cursor-pointer"></div>
             </div>
@@ -66,7 +71,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <div class="col-md-3 cursor-pointer academico">
         <a class="a-no-format cursor-pointer" id="23395"><div class="card subjects-home">
             <div class="card-body hvr-shutter-out-vertical ">
-                <label class="card-title cursor-pointer">Historial Deportivo</label>
+                <label class="card-title cursor-pointer">Mis Horarios</label>
             </div>
             <div class="card-footer subjects-footer cursor-pointer"></div>
             </div>
@@ -76,7 +81,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <div class="col-md-3 cursor-pointer academico">
         <a class="a-no-format cursor-pointer" id="23395"><div class="card subjects-home">
             <div class="card-body hvr-shutter-out-vertical ">
-                <label class="card-title cursor-pointer">Coaches</label>
+                <label class="card-title cursor-pointer">Mi Equipo</label>
             </div>
             <div class="card-footer subjects-footer cursor-pointer"></div>
             </div>
@@ -86,17 +91,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <div class="col-md-3 cursor-pointer academico">
         <a class="a-no-format cursor-pointer" id="23395"><div class="card subjects-home">
             <div class="card-body hvr-shutter-out-vertical ">
-                <label class="card-title cursor-pointer">Horarios</label>
-            </div>
-            <div class="card-footer subjects-footer cursor-pointer"></div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-md-3 cursor-pointer academico">
-        <a class="a-no-format cursor-pointer" id="23395"><div class="card subjects-home">
-            <div class="card-body hvr-shutter-out-vertical ">
-                <label class="card-title cursor-pointer">Eventos</label>
+                <label class="card-title cursor-pointer">Mis Eventos</label>
             </div>
             <div class="card-footer subjects-footer cursor-pointer"></div>
             </div>

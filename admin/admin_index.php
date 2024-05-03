@@ -41,6 +41,10 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         </ul>
     </div>
 
+<div> <!-- METER CSS A ESTE DIV -->
+    <h1>INICIO</h1>
+</div>
+
 <div class="row mis-clases-cards">
 
     <div class="col-md-3 cursor-pointer academico">

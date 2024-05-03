@@ -11,6 +11,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     exit; // Asegurar que el script se detenga después de la redirección
 }
 
+/*
 // Verificar si se ha enviado el formulario
 if (isset($_POST['solicitud-btn'])) {
     // Recibir datos del formulario
@@ -32,11 +33,7 @@ if (isset($_POST['solicitud-btn'])) {
         // Si hay un error de duplicación de clave primaria, mostrar un mensaje de error
         echo '<script>alert("Solo puedes tener una solicitud activa");</script>';
     }
-}
-
-
-// Cerrar la conexión
-mysqli_close($db);
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -61,39 +58,36 @@ mysqli_close($db);
     </div>
 </header>
 
-<button id="open">Crear una Solicitud</button>
-
-<div class="modal-container" id="modal_container">
-    <div class="modal">
+        
+<div class="container_formulario">
         <h1>Nueva Solicitud</h1>
-        <form method="post" action="alumno_index.php">
-            <label for="deporte">Selecciona un deporte:</label>
-            <select name="deporte" id="deporte">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="Ajedrez">Ajedrez</option>
-                <option value="Baile">Baile</option>
-                <option value="Basquetbol">Basquetbol</option>
-                <option value="Futbol">Futbol</option>
-                <option value="Karate">Karate</option>
-                <option value="Porristas">Porristas</option>
-                <option value="Tiro con arco">Tiro con arco</option>
-                <option value="Volleyball">Volleyball</option>
-            </select>
-            <label for="motivo">Motivo de solicitud:</label>
-            <select name="motivo" id="motivo">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="actividad">Actividad deportiva</option>
-                <option value="cuadro">Cuadro de honor</option>
-            </select>
-            <input type="submit" class="fadeIn fourth" name="solicitud-btn" value="Envíar">
-        </form>
-        <button id="close">Cerrar</button>
-    </div>
+    <form action="enviosolicitudes.php" class="form-contact" method="post" tabindex="1">
+        <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
+        <input type="tel" class="form-contact-input" name="tel" placeholder="Teléfono" />
+
+        <select name="deporte" class="form-contact-input" required>
+            <option value="" disabled selected>Selecciona un deporte</option>
+            <option value="1">Fútbol Varonil</option>
+            <option value="2">Fútbol Femenil</option>
+            <option value="3">Ajedrez</option>
+            <option value="4">Básquetbol Varonil</option>
+            <option value="5">Básquetbol Femenil</option>
+        </select>
+
+        <select name="motivo" class="form-contact-input" required>
+            <option value="" disabled selected>Selecciona un motivo de solicitud</option>
+            <option value="actividad">Actividad deportiva</option>
+            <option value="cuadro">Selección deportiva</option>
+        </select>
+
+        <textarea class="form-contact-textarea" name="conteudo" placeholder="Deja un mensaje" required></textarea>
+        <button type="submit" class="form-contact-button">Enviar</button>
+    </form>
 </div>
 
-<nav>
-    <a href="logout.php">Cerrar sesión</a>
-</nav>
+<div>
+    <a href="logout.php">Cerrar sesión</a> 
+</div>
 
 <script src="alumnojs.js"></script>
 
