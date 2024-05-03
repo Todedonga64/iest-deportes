@@ -11,29 +11,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     exit; // Asegurar que el script se detenga después de la redirección
 }
 
-/*
-// Verificar si se ha enviado el formulario
-if (isset($_POST['solicitud-btn'])) {
-    // Recibir datos del formulario
-    $deporte = $_POST['deporte'];
-    $motivo = $_POST['motivo'];
-    $id = $_SESSION['id'];
 
-    // Consulta para insertar datos en la tabla
-    $sql = "INSERT INTO solicitudes VALUES ('$id','$deporte', '$motivo','pendiente')";
-
-    // Ejecutar la consulta
-    try {
-        if (mysqli_query($db, $sql)) {
-            echo '<script>alert("Solicitud ingresada correctamente");</script>';
-        } else {
-            $_SESSION['alert']="Error al ingresar la solicitud";
-        }
-    } catch (mysqli_sql_exception $e) {
-        // Si hay un error de duplicación de clave primaria, mostrar un mensaje de error
-        echo '<script>alert("Solo puedes tener una solicitud activa");</script>';
-    }
-}*/
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +41,7 @@ if (isset($_POST['solicitud-btn'])) {
 
 <div class="container_formulario">
         <h1>Nueva Solicitud</h1>
-    <form action="enviosolicitudes.php" class="form-contact" method="post" tabindex="1">
+    <form action="botonenviar.php" class="form-contact" method="post" tabindex="1">
         <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
         <input type="tel" class="form-contact-input" name="tel" placeholder="Teléfono" />
 
@@ -82,7 +60,7 @@ if (isset($_POST['solicitud-btn'])) {
             <option value="cuadro">Selección deportiva</option>
         </select>
 
-        <textarea class="form-contact-textarea" name="conteudo" placeholder="Motivo de Tu Solicitud" required></textarea>
+        <textarea class="form-contact-textarea" name="contenido" placeholder="Motivo de Tu Solicitud" required></textarea>
         <button type="submit" class="form-contact-button">Enviar</button>
     </form>
 </div>
