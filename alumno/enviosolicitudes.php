@@ -36,9 +36,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     </div>
 </header>
 
-<?php
-    var_dump($_SESSION);
-?>    
 <!-- NO FUNCIONA EL ENVIO DE FORM, LO VOY ARREGLAR MAS TARDE BY: MAX -->
 
 <div class="container_formulario">
