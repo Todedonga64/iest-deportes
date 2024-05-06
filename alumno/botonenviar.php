@@ -28,9 +28,13 @@ $sql = "INSERT INTO solicitudes (idSolicitudes, iddeporte, motivo_solicitud, est
 VALUES ('$id_acceso','$deporte_id', '$motivo','PENDIENTE','$email','$tel','$razon')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Solicitud enviada correctamente";
+    $response = array("success" => true, "message" => "Se envio correctamente el Formulario");
+    //GUARDA LA INFORMACION DEL $RESULT en session global
+    echo json_encode($response);  
 } else {
-    echo "Error al enviar la solicitud: " . $conn->error;
+    $response = array("success" => false, "message" => "Error");
+    //GUARDA LA INFORMACION DEL $RESULT en session global
+    echo json_encode($response); 
 }
 
 // Cerrar la conexión

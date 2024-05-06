@@ -44,7 +44,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 
 <div class="container_formulario">
         <h1>Nueva Solicitud</h1>
-    <form action="botonenviar.php" class="form-contact" method="post" tabindex="1">
+    <form id="form_enviarsoli" onsubmit="form_enviarsoli(event)" action="botonenviar.php" class="form-contact" method="post" tabindex="1">
         <input type="email" class="form-contact-input" name="email" placeholder="Email" required />
         <input type="tel" class="form-contact-input" name="tel" placeholder="Teléfono" />
 
@@ -73,6 +73,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 </div>
 
 <script src="alumnojs.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
