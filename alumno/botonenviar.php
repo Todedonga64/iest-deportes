@@ -1,4 +1,6 @@
 <?php
+require_once("../conexiondb.php");
+
 session_start(); // Iniciar la sesión si no se ha iniciado aún
 
 // Verificar si el usuario está autenticado
@@ -12,7 +14,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 }
 
 // Acceder al valor de 'id_iest'
-$id_iest = $_SESSION['user_data']['id_iest'];
+$id_acceso = $_SESSION['user_data']['idAcceso'];
 
 // Obtener los datos del formulario
 $email = $_POST['email'];
@@ -22,9 +24,8 @@ $motivo = $_POST['contenido'];
 $razon = $_POST['motivo'];
 
 // Insertar los datos en la base de datos
-$sql = "INSERT INTO solicitudes 
-(idSolicitudes,iddeporte, motivo_solicitud,estatus,Email,Cel,razon_solicitud) 
-VALUES ('$id_iest','$deporte_id', '$motivo','PENDIENTE','$email','$tel',$razon)";
+$sql = "INSERT INTO solicitudes (idSolicitudes, iddeporte, motivo_solicitud, estatus, Email, Cel, razon_solicitud)
+VALUES ('$id_acceso','$deporte_id', '$motivo','PENDIENTE','$email','$tel','$razon')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Solicitud enviada correctamente";
