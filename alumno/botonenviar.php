@@ -11,14 +11,20 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     exit; // Asegurar que el script se detenga después de la redirección
 }
 
+// Acceder al valor de 'id_iest'
+$id_iest = $_SESSION['user_data']['id_iest'];
+
 // Obtener los datos del formulario
 $email = $_POST['email'];
 $tel = $_POST['tel'];
 $deporte_id = $_POST['deporte'];
 $motivo = $_POST['contenido'];
+$razon = $_POST['motivo'];
 
 // Insertar los datos en la base de datos
-$sql = "INSERT INTO Solicitudes (iddeporte, motivo_solicitud) VALUES ('$deporte_id', '$motivo')";
+$sql = "INSERT INTO solicitudes 
+(idSolicitudes,iddeporte, motivo_solicitud,estatus,Email,Cel,razon_solicitud) 
+VALUES ('$id_iest','$deporte_id', '$motivo','PENDIENTE','$email','$tel',$razon)";
 
 if ($conn->query($sql) === TRUE) {
     echo "Solicitud enviada correctamente";
