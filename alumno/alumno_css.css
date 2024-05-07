@@ -431,6 +431,7 @@ div {
 
 .form-contact-button:hover {
   opacity: 1;
+  transform: scale(1.03);
 }
 
 .container_formulario {
