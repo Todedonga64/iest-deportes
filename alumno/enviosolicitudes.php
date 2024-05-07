@@ -59,8 +59,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 
         <select name="motivo" class="form-contact-input" required>
             <option value="" disabled selected>Selecciona un motivo de solicitud</option>
-            <option value="actividad">Actividad deportiva</option>
-            <option value="cuadro">Selección deportiva</option>
+            <option value="Actividad">Actividad deportiva</option>
+            <option value="Cuadro">Selección deportiva</option>
         </select>
 
         <textarea class="form-contact-textarea" name="contenido" placeholder="Motivo de Tu Solicitud" required></textarea>

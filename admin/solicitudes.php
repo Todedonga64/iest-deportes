@@ -11,6 +11,11 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     exit; // Asegurar que el script se detenga después de la redirección
 }
 $db=mysqli_connect("localhost","root","","mydb");
+
+$query = "SELECT * FROM solicitudes;";
+$result_usuario = mysqli_query($db, $query);
+while($row = mysqli_fetch_assoc($result_usuario)){
+
 ?>
 
 <!DOCTYPE html>
@@ -36,51 +41,65 @@ $db=mysqli_connect("localhost","root","","mydb");
     </div>
 </header>
 
-<div class="col-md-8">
 
-                    <table class="table table-border">
 
-                        <thead>
-                            <tr>
-                                <th>Numero Solicitud</th>
-                                <th>Deporte</th>
-                                <th>Descripcion</th>  <!-- FALTA AGREGAR NOMBRES DE USUARIO Y ID DEL USUARIO --> 
-                                <th>Status</th>       <!-- TMB EN LUGAR DE SACAR EL ID DEL DEPORTE QUE SAQUE EL NOMBRE -->
-                            </tr>
-                        </thead>
-                        <tbody>
+<body>
+  <br>
+  <div class="container">
+    <h1>Solicitudes</h1>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+            <th>Solicitud</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Celular</th>
+            <th>Deporte</th>
+            <th>Motivo</th>
+            <th>Descripcion</th>  
+            <th>Status</th> 
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <td>
+                    <?php echo $row['idSolicitudes']; ?>
+                </td>
+                <td>
+                    <!--<?php echo $row['nombre']; ?> -->
+                </td>
+                <td>
+                    <?php echo $row['Email']; ?>
+                </td>
+                <td>
+                    <?php echo $row['Cel']; ?>
+                </td>
+                <td>
+                    <!--<?php echo $row['iddeporte']; ?>-->
+                </td>
+                <td>
+                    <?php echo $row['razon_solicitud']; ?>
+                </td>
+                <td>
+                    <?php echo $row['motivo_solicitud']; ?>
+                </td>
+                <td>
+                    <?php echo $row['estatus']; ?>
+                </td>
+            </tr>
+            <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
 
-                            <?php
-
-                        $query = "SELECT * FROM solicitudes;";
-                        $result_usuario = mysqli_query($db, $query);
-                        while($row = mysqli_fetch_assoc($result_usuario)){ ?>
-                                <!--recorro mi tabla usuario-->
-                                <tr>
-                                    <td>
-                                        <?php echo $row['idSolicitudes']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['iddeporte']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['motivo_solicitud']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $row['estatus']; ?>
-                                    </td>
-                                </tr>
-                                
-                                <?php } ?>
-
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div>
-
-<nav>
-    <a href="admin_index.php">Regresar</a>
-</nav>
+<div>
+    <footer>
+        <a href="admin_index.php">Regresar</a>
+    </footer>
+</div>
